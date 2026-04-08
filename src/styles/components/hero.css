@@ -33,7 +33,7 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%;
+  width: 55%;
   height: 100%;
   z-index: 1;
 }
@@ -42,18 +42,34 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: right top;
 }
 
+/* Multi-layer gradient for seamless black-to-image blend */
 .hero__photo::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg,
-    rgba(0,0,0,0.7) 0%,
-    rgba(0,0,0,0.1) 30%,
-    transparent 50%
-  );
+  background:
+    /* Left edge: strong black fade into image */
+    linear-gradient(90deg,
+      rgba(0,0,0,1) 0%,
+      rgba(0,0,0,0.85) 8%,
+      rgba(0,0,0,0.5) 20%,
+      rgba(0,0,0,0.15) 40%,
+      transparent 60%
+    ),
+    /* Bottom fade for subtitle/CTA readability */
+    linear-gradient(0deg,
+      rgba(0,0,0,0.7) 0%,
+      rgba(0,0,0,0.3) 15%,
+      transparent 35%
+    ),
+    /* Subtle top-right vignette for nav readability */
+    linear-gradient(180deg,
+      rgba(0,0,0,0.3) 0%,
+      transparent 12%
+    );
 }
 
 .hero__bottom {
@@ -79,11 +95,6 @@
   font-size: var(--fs-xs);
   color: var(--gray-3);
   letter-spacing: 0.05em;
-}
-
-/* Placeholder fallback */
-.hero__photo-img[src="/img/hero.jpg"] {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
 }
 
 /* ── Mobile ── */

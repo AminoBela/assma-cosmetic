@@ -35,4 +35,13 @@
 
 @media (pointer: fine) {
   .cursor, .cursor-trail { display: block; }
+
+  *,
+  a,
+  button,
+  input,
+  textarea,
+  [role="button"] {
+    cursor: none !important;
+  }
 }

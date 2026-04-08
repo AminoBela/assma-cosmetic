@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 4%;
-  transition: background var(--dur), padding var(--dur);
+  transition: background var(--dur), padding var(--dur), color var(--dur);
 }
 
 .nav.scrolled {
@@ -18,6 +18,34 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   padding-block: 0.7rem;
+}
+
+/* Light variant — when nav overlaps white-background sections */
+.nav.nav--light.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+}
+
+.nav.nav--light .nav__logo,
+.nav.nav--light .nav__link {
+  color: var(--black);
+}
+
+.nav.nav--light .nav__link::after {
+  background: var(--black);
+}
+
+.nav.nav--light .nav__toggle span {
+  background: var(--black);
+}
+
+.nav.nav--light .nav__link--cta {
+  background: var(--black);
+  color: var(--white);
+}
+
+.nav.nav--light .nav__link--cta:hover {
+  background: var(--gray-5);
 }
 
 .nav__logo {
