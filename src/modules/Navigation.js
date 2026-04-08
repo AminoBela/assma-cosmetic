@@ -72,6 +72,8 @@ export default class Navigation {
     this.toggle.addEventListener('click', () => {
       const isOpen = this.menu.classList.toggle(this.config.openClass);
       this.toggle.classList.toggle(this.config.activeClass, isOpen);
+      this.toggle.setAttribute('aria-expanded', String(isOpen));
+      this.toggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
   }
