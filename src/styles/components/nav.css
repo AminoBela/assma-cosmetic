@@ -1,4 +1,4 @@
-/* ── NAVIGATION ── */
+/* ── NAVIGATION — Premium ── */
 
 .nav {
   position: fixed;
@@ -9,35 +9,56 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 4%;
-  transition: background var(--dur), padding var(--dur), color var(--dur);
+  padding: 1.2rem 4%;
+  transition: all var(--dur) var(--ease-luxury);
+}
+
+/* Subtle gradient behind nav for image readability */
+.nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  bottom: -30px;
+  background: linear-gradient(180deg,
+    rgba(0,0,0,0.5) 0%,
+    rgba(0,0,0,0.2) 60%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: -1;
+  transition: opacity var(--dur);
 }
 
 .nav.scrolled {
-  background: rgba(0, 0, 0, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   padding-block: 0.7rem;
 }
 
-/* Light variant — when nav overlaps white-background sections */
-.nav.nav--light.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(16px);
+.nav.scrolled::before { opacity: 0; }
+
+/* ── Dark (default) ── */
+.nav.scrolled.nav--dark {
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
+
+/* ── Light (over white sections) ── */
+.nav.scrolled.nav--light {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.nav.nav--light::before { opacity: 0; }
 
 .nav.nav--light .nav__logo,
 .nav.nav--light .nav__link {
   color: var(--black);
+  text-shadow: none;
 }
 
-.nav.nav--light .nav__link::after {
-  background: var(--black);
-}
-
-.nav.nav--light .nav__toggle span {
-  background: var(--black);
-}
+.nav.nav--light .nav__link::after { background: var(--black); }
+.nav.nav--light .nav__toggle span { background: var(--black); }
 
 .nav.nav--light .nav__link--cta {
   background: var(--black);
@@ -48,20 +69,27 @@
   background: var(--gray-5);
 }
 
+/* ── Logo ── */
 .nav__logo {
   font-family: var(--ff-display);
   font-size: var(--fs-lg);
   font-weight: 400;
   color: var(--white);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+  transition: color var(--dur), text-shadow var(--dur);
 }
 
-.nav__logo span { font-weight: 600; }
+.nav__logo span {
+  font-weight: 600;
+  font-style: italic;
+}
 
+/* ── Mobile toggle ── */
 .nav__toggle {
   display: none;
   flex-direction: column;
   gap: 5px;
-  padding: 5px;
+  padding: 8px;
   z-index: 1001;
 }
 
@@ -78,31 +106,33 @@
 .nav__toggle.active span:nth-child(2) { opacity: 0; }
 .nav__toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
 
+/* ── Menu ── */
 .nav__menu {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .nav__link {
   font-size: var(--fs-xs);
-  font-weight: 400;
-  letter-spacing: 0.1em;
+  font-weight: 500;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--white);
   position: relative;
-  transition: opacity var(--dur);
+  text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+  transition: color var(--dur), text-shadow var(--dur), opacity var(--dur);
 }
 
 .nav__link::after {
   content: '';
   position: absolute;
-  bottom: -3px;
+  bottom: -4px;
   left: 0;
   width: 0;
   height: 1px;
   background: var(--white);
-  transition: width var(--dur);
+  transition: width var(--dur) var(--ease-luxury);
 }
 
 .nav__link:hover { opacity: 0.7; }
@@ -111,17 +141,20 @@
 .nav__link--cta {
   background: var(--white);
   color: var(--black);
-  padding: 0.4em 1.3em;
+  padding: 0.5em 1.5em;
   font-weight: 500;
+  text-shadow: none;
+  transition: all var(--dur) var(--ease-luxury);
 }
 
 .nav__link--cta::after { display: none; }
 .nav__link--cta:hover {
   opacity: 1;
-  background: var(--gray-2);
+  background: var(--cream);
+  transform: translateY(-1px);
 }
 
-/* ── Mobile menu ── */
+/* ── Mobile ── */
 @media (max-width: 900px) {
   .nav__toggle { display: flex; }
 
@@ -129,10 +162,10 @@
     position: fixed;
     inset: 0;
     background: rgba(0, 0, 0, 0.97);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(30px);
     flex-direction: column;
     justify-content: center;
-    gap: 2rem;
+    gap: 2.5rem;
     opacity: 0;
     visibility: hidden;
     transition: opacity var(--dur), visibility var(--dur);
@@ -144,8 +177,18 @@
   }
 
   .nav__link {
-    font-size: var(--fs-lg);
+    font-size: var(--fs-xl);
     font-family: var(--ff-display);
+    font-weight: 400;
+    font-style: italic;
     text-transform: none;
+    letter-spacing: 0.02em;
+    text-shadow: none;
+  }
+
+  .nav__link--cta {
+    font-family: var(--ff-body);
+    font-style: normal;
+    font-size: var(--fs-xs);
   }
 }

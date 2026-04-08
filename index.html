@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brows by Assma Cosmetics — Belleza Profesional</title>
-  <meta name="description" content="Brows by Assma Cosmetics. Expertas en resaltar lo mejor de ti. Servicios de cejas, maquillaje y cosmética." />
+  <meta name="description"
+    content="Brows by Assma Cosmetics. Expertas en resaltar lo mejor de ti. Servicios de cejas, maquillaje y cosmética." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="/src/styles/main.css" />
 </head>
+
 <body>
 
   <!-- ═══════════ LOADER ═══════════ -->
   <div id="page-loader" class="loader">
     <div class="loader__inner">
       <span class="loader__text">Assma Cosmetics</span>
-      <div class="loader__bar"><div class="loader__fill"></div></div>
+      <div class="loader__bar">
+        <div class="loader__fill"></div>
+      </div>
     </div>
   </div>
 
@@ -40,17 +47,17 @@
        centered subtitle + CTA + handle 
   -->
   <header id="hero" class="hero">
-    <div class="hero__text reveal-text">
-      <h1 class="hero__title">Brows by<br><span>Assma cosmetics</span></h1>
+    <div class="hero__photo">
+      <img src="/img/hero.jpg" alt="Assma — Profesional de belleza" class="hero__photo-img" />
     </div>
-    <div class="hero__photo reveal-scale">
-      <img src="/img/hero.jpg" alt="Assma — Profesional de belleza" class="hero__photo-img"/>
+    <div class="hero__overlay reveal-text">
+      <p class="hero__tagline">Expertas en resaltar lo mejor de ti</p>
+      <h1 class="hero__title">Brows by<br><em>Assma cosmetics</em></h1>
+      <a href="https://www.treatwell.es/establecimiento/brows-by-assma-cosmetics/" target="_blank" rel="noopener"
+        class="hero__cta" id="hero-cta">Reserva tu cita →</a>
     </div>
-    <div class="hero__bottom reveal-fade">
-      <p class="hero__subtitle">Expertas en resaltar lo mejor de ti</p>
-      <a href="https://www.treatwell.es/salon/assma-cosmetics/" target="_blank" rel="noopener" class="btn btn--white" id="hero-cta">Reserva tu cita</a>
-      <span class="hero__handle">@assma.cosmetic</span>
-    </div>
+    <a href="https://www.instagram.com/assma.cosmetic/" target="_blank" rel="noopener"
+      class="hero__handle reveal-fade">@assma.cosmetic</a>
   </header>
 
   <!-- ═══════════ SOCIAL ("Nuestras redes sociales") ═══════════ 
@@ -58,9 +65,10 @@
        title at bottom
   -->
   <section id="social" class="social">
+    <h2 class="social__title reveal-fade">Nuestras redes sociales</h2>
     <div class="social__inner">
       <div class="social__person reveal-slide">
-        <img src="/img/social-person.jpg" alt="Assma" />
+        <img src="/img/social-person.png" alt="Assma" />
       </div>
       <div class="social__devices">
         <div class="social__device social__device--ig reveal-scale">
@@ -71,7 +79,6 @@
         </div>
       </div>
     </div>
-    <h2 class="social__title reveal-fade">Nuestras redes sociales</h2>
   </section>
 
   <!-- ═══════════ TREATMENTS ("Nuestros tratamientos") ═══════════ 
@@ -114,7 +121,8 @@
     </div>
     <div class="training__photo">
       <img src="/img/training.jpg" alt="Formación profesional en cosmética" class="training__photo-img reveal-scale" />
-      <a href="https://www.treatwell.es/salon/assma-cosmetics/" target="_blank" rel="noopener" class="btn btn--dark training__cta reveal-fade" id="training-cta">Contáctanos</a>
+      <a href="https://www.treatwell.es/establecimiento/brows-by-assma-cosmetics/" target="_blank" rel="noopener"
+        class="btn btn--dark training__cta reveal-fade" id="training-cta">Contáctanos</a>
     </div>
   </section>
 
@@ -133,14 +141,20 @@
     <div class="footer__inner">
       <a href="#hero" class="footer__logo" id="footer-logo">Brows by <span>Assma</span></a>
       <div class="footer__socials">
-        <a href="#" aria-label="Instagram" class="footer__social" id="footer-ig">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+        <a href="https://www.instagram.com/assma.cosmetic/" target="_blank" rel="noopener" aria-label="Instagram"
+          class="footer__social" id="footer-ig">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="2" width="20" height="20" rx="5" />
+            <circle cx="12" cy="12" r="5" />
+            <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none" />
+          </svg>
         </a>
-        <a href="#" aria-label="TikTok" class="footer__social" id="footer-tk">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .55.04.81.1v-3.5a6.37 6.37 0 00-.81-.05A6.35 6.35 0 003.14 15.2a6.35 6.35 0 007.17 6.3 6.35 6.35 0 005.56-6.3V9.08a8.28 8.28 0 004.72 1.47V7.1a4.83 4.83 0 01-1-.41z"/></svg>
-        </a>
-        <a href="#" aria-label="Facebook" class="footer__social" id="footer-fb">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        <a href="https://www.tiktok.com/discover/brows-by-assma-cosmetic" target="_blank" rel="noopener"
+          aria-label="TikTok" class="footer__social" id="footer-tk">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .55.04.81.1v-3.5a6.37 6.37 0 00-.81-.05A6.35 6.35 0 003.14 15.2a6.35 6.35 0 007.17 6.3 6.35 6.35 0 005.56-6.3V9.08a8.28 8.28 0 004.72 1.47V7.1a4.83 4.83 0 01-1-.41z" />
+          </svg>
         </a>
       </div>
       <p class="footer__copy">&copy; 2026 Brows by Assma Cosmetics. Todos los derechos reservados.</p>
@@ -153,4 +167,5 @@
 
   <script type="module" src="/src/main.js"></script>
 </body>
+
 </html>

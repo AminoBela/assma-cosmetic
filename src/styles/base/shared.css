@@ -1,20 +1,25 @@
 /* ════════════════════════════════════════
-   SHARED UI: Buttons & Reveal Animations
-   Reusable patterns used across components.
+   SHARED UI
    ════════════════════════════════════════ */
 
 /* ── BUTTONS ── */
 .btn {
-  display: inline-block;
-  padding: 0.75em 2.2em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  padding: 0.85em 2.4em;
   font-family: var(--ff-body);
-  font-size: var(--fs-sm);
+  font-size: var(--fs-xs);
   font-weight: 500;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   text-align: center;
   cursor: pointer;
-  transition: all var(--dur) var(--ease);
   border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--dur) var(--ease-luxury);
 }
 
 .btn--white {
@@ -23,9 +28,9 @@
 }
 
 .btn--white:hover {
-  background: var(--gray-2);
+  background: var(--cream);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
 }
 
 .btn--dark {
@@ -36,6 +41,7 @@
 .btn--dark:hover {
   background: var(--black);
   transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 
 .btn--accent {
@@ -45,14 +51,9 @@
 }
 
 .btn--accent:hover {
-  filter: brightness(1.15);
+  filter: brightness(1.12);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(107, 63, 160, 0.35);
-}
-
-.btn--full {
-  width: 100%;
-  justify-content: center;
+  box-shadow: 0 8px 25px rgba(107, 63, 160, 0.35);
 }
 
 
@@ -62,13 +63,14 @@
 .reveal-slide,
 .reveal-scale {
   opacity: 0;
-  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease-out);
+  transition: opacity 1s var(--ease-luxury), transform 1s var(--ease-out);
+  will-change: opacity, transform;
 }
 
-.reveal-text  { transform: translateY(40px); }
-.reveal-fade  { transform: translateY(20px); }
-.reveal-slide { transform: translateX(-30px); }
-.reveal-scale { transform: scale(0.95); }
+.reveal-text  { transform: translateY(50px); }
+.reveal-fade  { transform: translateY(25px); }
+.reveal-slide { transform: translateX(-40px); }
+.reveal-scale { transform: scale(0.93); }
 
 .reveal-text.visible,
 .reveal-fade.visible,
@@ -78,6 +80,6 @@
   transform: translate(0) scale(1);
 }
 
-/* Stagger children */
-.reveal-scale:nth-child(2) { transition-delay: 0.1s; }
-.reveal-scale:nth-child(3) { transition-delay: 0.2s; }
+/* Stagger */
+.reveal-scale:nth-child(2) { transition-delay: 0.15s; }
+.reveal-scale:nth-child(3) { transition-delay: 0.3s; }

@@ -1,6 +1,6 @@
 /**
  * Navigation Module
- * Responsibility: Sticky nav scroll behavior + mobile menu toggle.
+ * Responsibility: Sticky nav scroll behavior + mobile menu toggle + light/dark mode detection.
  */
 
 const DEFAULTS = {
@@ -8,9 +8,11 @@ const DEFAULTS = {
   toggleId: 'nav-toggle',
   menuId: 'nav-menu',
   scrolledClass: 'scrolled',
+  lightClass: 'nav--light',
   activeClass: 'active',
   openClass: 'open',
   linkSelector: '.nav__link',
+  lightSections: '.treatments, .contact', // sections with white background
   scrollThreshold: 50,
 };
 
@@ -23,10 +25,13 @@ export default class Navigation {
     this.nav = document.getElementById(this.config.navId);
     this.toggle = document.getElementById(this.config.toggleId);
     this.menu = document.getElementById(this.config.menuId);
+    this._lightSections = [];
   }
 
   init() {
     if (!this.nav || !this.toggle || !this.menu) return this;
+
+    this._lightSections = [...document.querySelectorAll(this.config.lightSections)];
 
     this._bindScrollBehavior();
     this._bindToggle();
@@ -36,12 +41,31 @@ export default class Navigation {
   }
 
   _bindScrollBehavior() {
-    window.addEventListener('scroll', () => {
-      this.nav.classList.toggle(
-        this.config.scrolledClass,
-        window.scrollY > this.config.scrollThreshold
-      );
-    }, { passive: true });
+    const onScroll = () => {
+      const scrollY = window.scrollY;
+
+      // Sticky background
+      this.nav.classList.toggle(this.config.scrolledClass, scrollY > this.config.scrollThreshold);
+
+      // Light/dark detection based on which section is under the nav
+      this._updateNavTheme();
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    // Run once on init to set correct state
+    onScroll();
+  }
+
+  _updateNavTheme() {
+    const navBottom = this.nav.getBoundingClientRect().bottom;
+
+    const isOverLight = this._lightSections.some(section => {
+      const rect = section.getBoundingClientRect();
+      return rect.top < navBottom && rect.bottom > 0;
+    });
+
+    this.nav.classList.toggle(this.config.lightClass, isOverLight);
+    this.nav.classList.toggle('nav--dark', !isOverLight);
   }
 
   _bindToggle() {

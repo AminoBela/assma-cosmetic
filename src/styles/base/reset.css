@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════
-   GLOBAL RESET & BASE STYLES
+   GLOBAL RESET & BASE
    ════════════════════════════════════════ */
 
 *, *::before, *::after {
@@ -11,17 +11,19 @@
 html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: var(--gray-5) var(--black);
+  scrollbar-color: var(--gray-4) var(--black);
 }
 
 body {
   font-family: var(--ff-body);
   font-size: var(--fs-base);
   color: var(--black);
-  background: var(--white);
-  line-height: 1.6;
+  background: var(--black);
+  line-height: 1.65;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 img {
@@ -31,7 +33,12 @@ img {
   object-fit: cover;
 }
 
-a { color: inherit; text-decoration: none; }
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity var(--dur);
+}
+
 ul { list-style: none; }
 
 button {
@@ -42,8 +49,14 @@ button {
   color: inherit;
 }
 
-::selection { background: var(--black); color: var(--white); }
+::selection {
+  background: var(--black);
+  color: var(--white);
+}
 
-::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--black); }
-::-webkit-scrollbar-thumb { background: var(--gray-4); border-radius: 3px; }
+::-webkit-scrollbar-thumb {
+  background: var(--gray-4);
+  border-radius: 4px;
+}

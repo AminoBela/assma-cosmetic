@@ -1,76 +1,102 @@
-/* ── TREATMENTS ── */
+/* ── TREATMENTS — Premium ── */
 
 .treatments {
-  background: var(--white);
-  padding: 5rem 0;
+  background: var(--cream);
+  padding: var(--section-pad) 0;
 }
 
 .treatments__inner {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 3rem;
+  gap: clamp(2rem, 5vw, 5rem);
   padding: 0 5%;
   align-items: start;
 }
 
-.treatments__header { padding-top: 0.5rem; }
+.treatments__header {
+  padding-top: 0.5rem;
+  position: sticky;
+  top: 6rem;
+}
 
 .treatments__title {
   font-family: var(--ff-display);
   font-size: var(--fs-2xl);
-  font-weight: 700;
+  font-weight: 400;
   font-style: italic;
   color: var(--black);
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
 .treatments__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: var(--gutter);
 }
 
-.treatment-card { cursor: pointer; }
+.treatment-card {
+  cursor: pointer;
+  position: relative;
+}
 
 .treatment-card__img {
   overflow: hidden;
-  aspect-ratio: 4/5;
-  margin-bottom: 0.8rem;
+  aspect-ratio: 3/4;
+  margin-bottom: 1rem;
+  background: var(--gray-2);
 }
 
 .treatment-card__img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--dur-slow) var(--ease);
+  transition: transform var(--dur-slow) var(--ease-luxury);
+  filter: grayscale(10%);
 }
 
 .treatment-card:hover .treatment-card__img img {
-  transform: scale(1.05);
+  transform: scale(1.06);
+  filter: grayscale(0%);
 }
 
 .treatment-card__name {
-  font-family: var(--ff-body);
+  font-family: var(--ff-display);
   font-size: var(--fs-sm);
-  font-weight: 500;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--gray-4);
+  letter-spacing: 0.02em;
+  transition: color var(--dur);
+}
+
+.treatment-card:hover .treatment-card__name {
   color: var(--black);
 }
 
-.treatment-card__img img[src^="/img/treatment-"] {
-  background: var(--gray-2);
-  min-height: 200px;
-}
-
-/* ── Mobile ── */
+/* ── Responsive ── */
 @media (max-width: 900px) {
   .treatments__inner {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
 
-  .treatments__grid { grid-template-columns: 1fr; }
+  .treatments__header {
+    position: static;
+    text-align: center;
+  }
+
+  .treatments__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 600px) {
-  .treatments__grid { gap: 1rem; }
+  .treatments__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .treatment-card__img {
+    aspect-ratio: 4/5;
+  }
 }
