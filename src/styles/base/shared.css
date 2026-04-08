@@ -1,0 +1,83 @@
+/* ════════════════════════════════════════
+   SHARED UI: Buttons & Reveal Animations
+   Reusable patterns used across components.
+   ════════════════════════════════════════ */
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-block;
+  padding: 0.75em 2.2em;
+  font-family: var(--ff-body);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--dur) var(--ease);
+  border: none;
+}
+
+.btn--white {
+  background: var(--white);
+  color: var(--black);
+}
+
+.btn--white:hover {
+  background: var(--gray-2);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+.btn--dark {
+  background: var(--gray-5);
+  color: var(--white);
+}
+
+.btn--dark:hover {
+  background: var(--black);
+  transform: translateY(-2px);
+}
+
+.btn--accent {
+  background: var(--accent);
+  color: var(--white);
+  font-weight: 600;
+}
+
+.btn--accent:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(107, 63, 160, 0.35);
+}
+
+.btn--full {
+  width: 100%;
+  justify-content: center;
+}
+
+
+/* ── REVEAL ANIMATIONS ── */
+.reveal-text,
+.reveal-fade,
+.reveal-slide,
+.reveal-scale {
+  opacity: 0;
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease-out);
+}
+
+.reveal-text  { transform: translateY(40px); }
+.reveal-fade  { transform: translateY(20px); }
+.reveal-slide { transform: translateX(-30px); }
+.reveal-scale { transform: scale(0.95); }
+
+.reveal-text.visible,
+.reveal-fade.visible,
+.reveal-slide.visible,
+.reveal-scale.visible {
+  opacity: 1;
+  transform: translate(0) scale(1);
+}
+
+/* Stagger children */
+.reveal-scale:nth-child(2) { transition-delay: 0.1s; }
+.reveal-scale:nth-child(3) { transition-delay: 0.2s; }

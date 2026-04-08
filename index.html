@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brows by Assma Cosmetics — Belleza Profesional</title>
+  <meta name="description" content="Brows by Assma Cosmetics. Expertas en resaltar lo mejor de ti. Servicios de cejas, maquillaje y cosmética." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/styles/main.css" />
+</head>
+<body>
+
+  <!-- ═══════════ LOADER ═══════════ -->
+  <div id="page-loader" class="loader">
+    <div class="loader__inner">
+      <span class="loader__text">Assma Cosmetics</span>
+      <div class="loader__bar"><div class="loader__fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ═══════════ NAV ═══════════ -->
+  <nav id="main-nav" class="nav">
+    <a href="#hero" class="nav__logo" id="nav-logo">Brows by <span>Assma</span></a>
+    <button id="nav-toggle" class="nav__toggle" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="nav-menu" class="nav__menu">
+      <li><a href="#hero" class="nav__link">Inicio</a></li>
+      <li><a href="#social" class="nav__link">Redes</a></li>
+      <li><a href="#treatments" class="nav__link">Tratamientos</a></li>
+      <li><a href="#training" class="nav__link">Formación</a></li>
+      <li><a href="#contact" class="nav__link nav__link--cta">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- ═══════════ HERO ═══════════ 
+       Black bg, big title left, photo right overlapping, 
+       centered subtitle + CTA + handle 
+  -->
+  <header id="hero" class="hero">
+    <div class="hero__text reveal-text">
+      <h1 class="hero__title">Brows by<br><span>Assma cosmetics</span></h1>
+    </div>
+    <div class="hero__photo reveal-scale">
+      <img src="/img/hero.jpg" alt="Assma — Profesional de belleza" class="hero__photo-img"/>
+    </div>
+    <div class="hero__bottom reveal-fade">
+      <p class="hero__subtitle">Expertas en resaltar lo mejor de ti</p>
+      <a href="https://www.treatwell.es/salon/assma-cosmetics/" target="_blank" rel="noopener" class="btn btn--white" id="hero-cta">Reserva tu cita</a>
+      <span class="hero__handle">@assma.cosmetic</span>
+    </div>
+  </header>
+
+  <!-- ═══════════ SOCIAL ("Nuestras redes sociales") ═══════════ 
+       Black bg, person photo left, device mockups center/right,
+       title at bottom
+  -->
+  <section id="social" class="social">
+    <div class="social__inner">
+      <div class="social__person reveal-slide">
+        <img src="/img/social-person.jpg" alt="Assma" />
+      </div>
+      <div class="social__devices">
+        <div class="social__device social__device--ig reveal-scale">
+          <img src="/img/social-ig.jpg" alt="Perfil de Instagram @assma.cosmetic" />
+        </div>
+        <div class="social__device social__device--tk reveal-scale">
+          <img src="/img/social-tk.jpg" alt="TikTok @assma.cosmetic" />
+        </div>
+      </div>
+    </div>
+    <h2 class="social__title reveal-fade">Nuestras redes sociales</h2>
+  </section>
+
+  <!-- ═══════════ TREATMENTS ("Nuestros tratamientos") ═══════════ 
+       White bg, title left, 3 image cards right with labels below
+  -->
+  <section id="treatments" class="treatments">
+    <div class="treatments__inner">
+      <div class="treatments__header reveal-fade">
+        <h2 class="treatments__title">Nuestros<br>tratamientos</h2>
+      </div>
+      <div class="treatments__grid">
+        <article class="treatment-card reveal-scale" id="treatment-faciales">
+          <div class="treatment-card__img">
+            <img src="/img/treatment-1.jpg" alt="Tratamientos faciales" />
+          </div>
+          <h3 class="treatment-card__name">Faciales</h3>
+        </article>
+        <article class="treatment-card reveal-scale" id="treatment-semi">
+          <div class="treatment-card__img">
+            <img src="/img/treatment-2.jpg" alt="Semi permanentes" />
+          </div>
+          <h3 class="treatment-card__name">Semi permanentes</h3>
+        </article>
+        <article class="treatment-card reveal-scale" id="treatment-cejas">
+          <div class="treatment-card__img">
+            <img src="/img/treatment-3.jpg" alt="Cejas, pestañas y depilaciones" />
+          </div>
+          <h3 class="treatment-card__name">Cejas, pestañas y depilaciones</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ TRAINING ("¿Quieres aprender…?") ═══════════ 
+       50/50 split: left black with text, right photo
+  -->
+  <section id="training" class="training">
+    <div class="training__text reveal-fade">
+      <h2 class="training__title">¿Quieres<br>aprender de la<br>mano de<br>nuestros<br>profesionales?</h2>
+    </div>
+    <div class="training__photo">
+      <img src="/img/training.jpg" alt="Formación profesional en cosmética" class="training__photo-img reveal-scale" />
+      <a href="https://www.treatwell.es/salon/assma-cosmetics/" target="_blank" rel="noopener" class="btn btn--dark training__cta reveal-fade" id="training-cta">Contáctanos</a>
+    </div>
+  </section>
+
+  <!-- ═══════════ CONTACT ("¿Tienes alguna duda?") ═══════════ 
+       Light bg, minimal bar: title left, button right
+  -->
+  <section id="contact" class="contact">
+    <div class="contact__bar reveal-fade">
+      <h2 class="contact__title">¿Tienes alguna duda?</h2>
+      <a href="mailto:info@assmacosmetics.com" class="btn btn--accent" id="contact-cta">Contáctanos</a>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <a href="#hero" class="footer__logo" id="footer-logo">Brows by <span>Assma</span></a>
+      <div class="footer__socials">
+        <a href="#" aria-label="Instagram" class="footer__social" id="footer-ig">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" aria-label="TikTok" class="footer__social" id="footer-tk">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .55.04.81.1v-3.5a6.37 6.37 0 00-.81-.05A6.35 6.35 0 003.14 15.2a6.35 6.35 0 007.17 6.3 6.35 6.35 0 005.56-6.3V9.08a8.28 8.28 0 004.72 1.47V7.1a4.83 4.83 0 01-1-.41z"/></svg>
+        </a>
+        <a href="#" aria-label="Facebook" class="footer__social" id="footer-fb">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+      </div>
+      <p class="footer__copy">&copy; 2026 Brows by Assma Cosmetics. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Cursor -->
+  <div id="cursor" class="cursor"></div>
+  <div id="cursor-trail" class="cursor-trail"></div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

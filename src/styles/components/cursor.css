@@ -1,0 +1,38 @@
+/* ── CUSTOM CURSOR ── */
+
+.cursor {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--white);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: width .3s, height .3s, background .3s, border-color .3s;
+  mix-blend-mode: difference;
+  display: none;
+}
+
+.cursor-trail {
+  position: fixed;
+  width: 5px;
+  height: 5px;
+  background: var(--white);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  display: none;
+}
+
+.cursor.hover {
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.05);
+}
+
+@media (pointer: fine) {
+  .cursor, .cursor-trail { display: block; }
+}

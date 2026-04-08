@@ -1,0 +1,69 @@
+/* ── TRAINING ── */
+
+.training {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 70vh;
+}
+
+.training__text {
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  padding: 4rem 5%;
+}
+
+.training__title {
+  font-family: var(--ff-display);
+  font-size: var(--fs-3xl);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.15;
+}
+
+.training__photo {
+  position: relative;
+  overflow: hidden;
+}
+
+.training__photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 70vh;
+  transition: transform var(--dur-slow) var(--ease);
+}
+
+.training__photo:hover .training__photo-img {
+  transform: scale(1.03);
+}
+
+.training__cta {
+  position: absolute;
+  right: 2rem;
+  bottom: 50%;
+  transform: translateY(50%);
+  z-index: 2;
+}
+
+.training__photo-img[src="/img/training.jpg"] {
+  background: var(--gray-2);
+}
+
+/* ── Mobile ── */
+@media (max-width: 900px) {
+  .training {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .training__text { padding: 4rem 5%; }
+  .training__photo-img { min-height: 50vh; }
+
+  .training__cta {
+    right: 1rem;
+    bottom: 1.5rem;
+    transform: none;
+  }
+}

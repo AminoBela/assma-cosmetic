@@ -1,0 +1,50 @@
+/* ── LOADER ── */
+
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.6s, visibility 0.6s;
+}
+
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.loader__inner { text-align: center; }
+
+.loader__text {
+  font-family: var(--ff-display);
+  font-size: var(--fs-xl);
+  font-weight: 400;
+  color: var(--white);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1.5rem;
+  animation: loader-pulse 1.5s ease-in-out infinite;
+}
+
+.loader__bar {
+  width: 180px;
+  height: 1px;
+  background: var(--gray-5);
+  margin-inline: auto;
+  overflow: hidden;
+}
+
+.loader__fill {
+  height: 100%;
+  width: 0%;
+  background: var(--white);
+  animation: loader-fill 1.8s ease forwards;
+}
+
+@keyframes loader-pulse { 0%,100% { opacity: .4; } 50% { opacity: 1; } }
+@keyframes loader-fill  { to { width: 100%; } }

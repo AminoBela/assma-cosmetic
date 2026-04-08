@@ -1,0 +1,123 @@
+/* ── NAVIGATION ── */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 4%;
+  transition: background var(--dur), padding var(--dur);
+}
+
+.nav.scrolled {
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding-block: 0.7rem;
+}
+
+.nav__logo {
+  font-family: var(--ff-display);
+  font-size: var(--fs-lg);
+  font-weight: 400;
+  color: var(--white);
+}
+
+.nav__logo span { font-weight: 600; }
+
+.nav__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px;
+  z-index: 1001;
+}
+
+.nav__toggle span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--white);
+  transition: var(--dur) var(--ease);
+  transform-origin: center;
+}
+
+.nav__toggle.active span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
+.nav__toggle.active span:nth-child(2) { opacity: 0; }
+.nav__toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav__link {
+  font-size: var(--fs-xs);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  position: relative;
+  transition: opacity var(--dur);
+}
+
+.nav__link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--white);
+  transition: width var(--dur);
+}
+
+.nav__link:hover { opacity: 0.7; }
+.nav__link:hover::after { width: 100%; }
+
+.nav__link--cta {
+  background: var(--white);
+  color: var(--black);
+  padding: 0.4em 1.3em;
+  font-weight: 500;
+}
+
+.nav__link--cta::after { display: none; }
+.nav__link--cta:hover {
+  opacity: 1;
+  background: var(--gray-2);
+}
+
+/* ── Mobile menu ── */
+@media (max-width: 900px) {
+  .nav__toggle { display: flex; }
+
+  .nav__menu {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.97);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--dur), visibility var(--dur);
+  }
+
+  .nav__menu.open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav__link {
+    font-size: var(--fs-lg);
+    font-family: var(--ff-display);
+    text-transform: none;
+  }
+}

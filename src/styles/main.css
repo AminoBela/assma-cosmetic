@@ -1,0 +1,27 @@
+/* ════════════════════════════════════════
+   BROWS BY ASSMA COSMETICS — CSS Entry Point
+
+   This file imports all style layers in order:
+   1. Tokens  (design variables)
+   2. Reset   (browser normalization)
+   3. Shared  (buttons, animations)
+   4. Components (one file per section)
+
+   No styles are defined here — just composition.
+   ════════════════════════════════════════ */
+
+/* Base layer */
+@import './base/tokens.css';
+@import './base/reset.css';
+@import './base/shared.css';
+
+/* Components (alphabetical) */
+@import './components/loader.css';
+@import './components/cursor.css';
+@import './components/nav.css';
+@import './components/hero.css';
+@import './components/social.css';
+@import './components/treatments.css';
+@import './components/training.css';
+@import './components/contact.css';
+@import './components/footer.css';
