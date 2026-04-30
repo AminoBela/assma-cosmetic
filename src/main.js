@@ -20,6 +20,7 @@ import Navigation   from './modules/Navigation.js';
 import SmoothScroll from './modules/SmoothScroll.js';
 import ScrollReveal from './modules/ScrollReveal.js';
 import CustomCursor from './modules/CustomCursor.js';
+import Modals       from './modules/Modals.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   new Loader().init();
@@ -27,4 +28,5 @@ document.addEventListener('DOMContentLoaded', () => {
   new SmoothScroll().init();
   new ScrollReveal().init();
   new CustomCursor().init();
+  new Modals().init();
 });

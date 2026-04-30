@@ -12,7 +12,7 @@ const DEFAULTS = {
   activeClass: 'active',
   openClass: 'open',
   linkSelector: '.nav__link',
-  lightSections: '.treatments, .contact', // sections with white background
+  lightSections: '.services-details, .contact', // sections with white background
   scrollThreshold: 50,
 };
 

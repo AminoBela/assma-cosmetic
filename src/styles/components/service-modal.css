@@ -1,0 +1,298 @@
+/* ════════════════════════════════════════
+   SERVICE MODALS & MENUS
+   ════════════════════════════════════════ */
+
+.service-modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  inset: 0;
+  z-index: 9000; /* Just under custom cursor which is 10000 */
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-luxury);
+}
+
+.service-modal[open] {
+  display: flex;
+  opacity: 1;
+}
+
+.service-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+.service-modal__container {
+  background: var(--white);
+  width: 95%;
+  max-width: 1200px;
+  height: 90vh; /* Fixed height so scrolling works internally */
+  border-radius: 16px;
+  box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  transform: translateY(30px) scale(0.96);
+  transition: transform 0.5s var(--ease-luxury);
+}
+
+.service-modal[open] .service-modal__container {
+  transform: translateY(0) scale(1);
+}
+
+.service-modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: none;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  color: var(--black);
+  transition: all 0.3s ease;
+}
+
+.service-modal__close:hover {
+  background: var(--black);
+  color: var(--white);
+  transform: rotate(90deg) scale(1.1);
+}
+
+.service-modal__content {
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow-y: auto;
+  height: 100%;
+  background: var(--cream);
+}
+
+@media (min-width: 900px) {
+  .service-modal__content {
+    grid-template-columns: 1.2fr 1fr;
+    overflow: hidden; /* only scroll the text side on desktop */
+  }
+}
+
+/* ── Custom Scrollbar ── */
+.service-modal__content,
+.service-modal__text {
+  scrollbar-width: thin;
+  scrollbar-color: var(--gray-3) var(--cream);
+}
+
+.service-modal__content::-webkit-scrollbar,
+.service-modal__text::-webkit-scrollbar {
+  width: 6px;
+}
+.service-modal__content::-webkit-scrollbar-track,
+.service-modal__text::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+.service-modal__content::-webkit-scrollbar-thumb,
+.service-modal__text::-webkit-scrollbar-thumb {
+  background: var(--gray-2);
+  border-radius: 10px;
+}
+.service-modal__content::-webkit-scrollbar-thumb:hover,
+.service-modal__text::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-3);
+}
+
+.service-modal__text {
+  padding: 2.5rem 1.5rem;
+  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 900px) {
+  .service-modal__text {
+    padding: 5rem 4rem;
+    overflow-y: auto;
+  }
+}
+
+.service-modal__title {
+  font-family: 'Anton', var(--ff-body);
+  font-weight: 400;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  margin-bottom: 3rem;
+  color: var(--black);
+  position: relative;
+}
+
+.service-modal__title::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--black);
+}
+
+/* ── Elegant Menu Design ── */
+.service-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.service-menu--2cols {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 600px) {
+  .service-menu--2cols {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+}
+
+.service-menu__col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.service-menu__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  color: var(--gray-5);
+  padding-bottom: 0.4rem;
+  position: relative;
+  transition: color 0.3s ease;
+  
+  /* Entrance Animation Base */
+  opacity: 0;
+  transform: translateY(15px);
+  transition: color 0.3s ease, opacity 0.5s var(--ease-luxury), transform 0.5s var(--ease-luxury);
+}
+
+.service-modal[open] .service-menu__item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger Animations for Menu Items */
+.service-menu__item:nth-child(1) { transition-delay: 0.10s; }
+.service-menu__item:nth-child(2) { transition-delay: 0.15s; }
+.service-menu__item:nth-child(3) { transition-delay: 0.20s; }
+.service-menu__item:nth-child(4) { transition-delay: 0.25s; }
+.service-menu__item:nth-child(5) { transition-delay: 0.30s; }
+.service-menu__item:nth-child(6) { transition-delay: 0.35s; }
+.service-menu__item:nth-child(7) { transition-delay: 0.40s; }
+.service-menu__item:nth-child(8) { transition-delay: 0.45s; }
+.service-menu__item:nth-child(9) { transition-delay: 0.50s; }
+.service-menu__item:nth-child(10) { transition-delay: 0.55s; }
+.service-menu__item:nth-child(11) { transition-delay: 0.60s; }
+.service-menu__item:nth-child(12) { transition-delay: 0.65s; }
+.service-menu__item:nth-child(13) { transition-delay: 0.70s; }
+.service-menu__item:nth-child(14) { transition-delay: 0.75s; }
+.service-menu__item:nth-child(15) { transition-delay: 0.80s; }
+.service-menu__item:nth-child(16) { transition-delay: 0.85s; }
+.service-menu__item:nth-child(17) { transition-delay: 0.90s; }
+
+/* Handle two columns delays */
+.service-menu__col:nth-child(2) .service-menu__item:nth-child(1) { transition-delay: 0.20s; }
+.service-menu__col:nth-child(2) .service-menu__item:nth-child(2) { transition-delay: 0.25s; }
+.service-menu__col:nth-child(2) .service-menu__item:nth-child(3) { transition-delay: 0.30s; }
+.service-menu__col:nth-child(2) .service-menu__item:nth-child(4) { transition-delay: 0.35s; }
+.service-menu__col:nth-child(2) .service-menu__item:nth-child(5) { transition-delay: 0.40s; }
+.service-menu__col:nth-child(2) .service-menu__item:nth-child(6) { transition-delay: 0.45s; }
+.service-menu__col:nth-child(2) .service-menu__item:nth-child(7) { transition-delay: 0.50s; }
+.service-menu__col:nth-child(2) .service-menu__item:nth-child(8) { transition-delay: 0.55s; }
+.service-menu__col:nth-child(2) .service-menu__item:nth-child(9) { transition-delay: 0.60s; }
+.service-menu__col:nth-child(2) .service-menu__item:nth-child(10) { transition-delay: 0.65s; }
+.service-menu__col:nth-child(2) .service-menu__item:nth-child(11) { transition-delay: 0.70s; }
+
+
+/* Elegant dotted leader line between text and price */
+.service-menu__item::before {
+  content: '';
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0;
+  right: 0;
+  border-bottom: 1px dotted var(--gray-3);
+  z-index: 1;
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
+}
+
+.service-menu__item:hover {
+  color: var(--black);
+  transform: translateX(4px);
+}
+
+.service-menu__item:hover::before {
+  opacity: 0.8;
+}
+
+.service-menu__item span:first-child {
+  background: var(--cream);
+  padding-right: 0.75rem;
+  z-index: 2;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.service-menu__item .service-menu__price {
+  background: var(--cream);
+  padding-left: 0.75rem;
+  z-index: 2;
+  font-family: var(--ff-display); /* use Playfair for price for elegance */
+  font-weight: 600;
+  font-style: italic;
+  color: var(--black);
+  white-space: nowrap;
+}
+
+.service-modal__media {
+  width: 100%;
+  height: 35vh;
+  min-height: 250px;
+  background: var(--gray-2);
+  position: relative;
+  order: -1; /* Move video to top on mobile */
+}
+
+@media (min-width: 900px) {
+  .service-modal__media {
+    height: 100%;
+    min-height: 600px;
+    order: 0; /* Reset order on desktop */
+  }
+}
+
+.service-modal__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

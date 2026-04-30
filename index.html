@@ -39,9 +39,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" as="style"
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap" />
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;800;900&display=swap" />
   <link
-    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;800;900&display=swap"
     rel="stylesheet" />
 
   <!-- ═══ Styles ═══ -->
@@ -124,7 +124,7 @@
     <ul id="nav-menu" class="nav__menu" role="menubar">
       <li role="none"><a href="#hero" class="nav__link" role="menuitem">Inicio</a></li>
       <li role="none"><a href="#social" class="nav__link" role="menuitem">Redes</a></li>
-      <li role="none"><a href="#treatments" class="nav__link" role="menuitem">Tratamientos</a></li>
+      <li role="none"><a href="#services-details" class="nav__link" role="menuitem">Tratamientos</a></li>
       <li role="none"><a href="#training" class="nav__link" role="menuitem">Formación</a></li>
       <li role="none"><a href="#contact" class="nav__link nav__link--cta" role="menuitem">Contacto</a></li>
     </ul>
@@ -205,27 +205,134 @@
           <h2 id="treatments-title" class="treatments__title">Nuestros<br>tratamientos</h2>
         </div>
         <div class="treatments__grid" role="list">
-          <article class="treatment-card reveal-scale" id="treatment-faciales" role="listitem">
+          <button data-modal-target="modal-faciales" class="treatment-card reveal-scale" id="treatment-faciales" role="listitem">
             <div class="treatment-card__img">
-              <img src="/img/treatment-1.jpg" alt="Tratamiento facial profesional — limpieza, hidratación y cuidado de la piel" loading="lazy" width="400" height="530" />
+              <img src="/img/treatment-1.jpg" alt="Tratamiento facial profesional" loading="lazy" width="400" height="530" />
             </div>
             <h3 class="treatment-card__name">Faciales</h3>
-          </article>
-          <article class="treatment-card reveal-scale" id="treatment-semi" role="listitem">
+          </button>
+          <button data-modal-target="modal-semi" class="treatment-card reveal-scale" id="treatment-semi" role="listitem">
             <div class="treatment-card__img">
-              <img src="/img/treatment-2.jpg" alt="Maquillaje semi-permanente — microblading y técnicas de larga duración" loading="lazy" width="400" height="530" />
+              <img src="/img/treatment-2.jpg" alt="Maquillaje semi-permanente" loading="lazy" width="400" height="530" />
             </div>
             <h3 class="treatment-card__name">Semi permanentes</h3>
-          </article>
-          <article class="treatment-card reveal-scale" id="treatment-cejas" role="listitem">
+          </button>
+          <button data-modal-target="modal-depilaciones" class="treatment-card reveal-scale" id="treatment-cejas" role="listitem">
             <div class="treatment-card__img">
-              <img src="/img/treatment-3.jpg" alt="Diseño de cejas, pestañas y depilación profesional" loading="lazy" width="400" height="530" />
+              <img src="/img/treatment-3.jpg" alt="Diseño de cejas, pestañas y depilación" loading="lazy" width="400" height="530" />
             </div>
             <h3 class="treatment-card__name">Cejas, pestañas y depilaciones</h3>
-          </article>
+          </button>
         </div>
       </div>
     </section>
+
+    <!-- ═══════════ MODALS ═══════════ -->
+    <div id="modal-faciales" class="service-modal" role="dialog" aria-modal="true">
+      <div class="service-modal__backdrop" data-modal-close></div>
+      <div class="service-modal__container">
+        <button class="service-modal__close" aria-label="Cerrar modal" data-modal-close>&times;</button>
+        <div class="service-modal__content">
+          <div class="service-modal__text">
+            <h2 class="service-modal__title">Faciales</h2>
+            <div class="service-menu">
+              <div class="service-menu__item"><span>Masaje Facial Kobido</span><span class="service-menu__price">15€</span></div>
+              <div class="service-menu__item"><span>Limpieza Conos de Cera</span><span class="service-menu__price">15€</span></div>
+              <div class="service-menu__item"><span>Masaje Anti-celulítico</span><span class="service-menu__price">25€</span></div>
+              <div class="service-menu__item"><span>Masaje Descontracturante</span><span class="service-menu__price">29€</span></div>
+              <div class="service-menu__item"><span>Cavitación y Vacumterapia</span><span class="service-menu__price">39€</span></div>
+              <div class="service-menu__item"><span>Masaje Corporal Completo</span><span class="service-menu__price">40€</span></div>
+              <div class="service-menu__item"><span>Maderoterapia Corporal</span><span class="service-menu__price">49€</span></div>
+              <div class="service-menu__item"><span>Hydralips</span><span class="service-menu__price">49€</span></div>
+              <div class="service-menu__item"><span>Tratamiento Body Sculpting</span><span class="service-menu__price">50€</span></div>
+              <div class="service-menu__item"><span>Tratamiento Facial Casmara</span><span class="service-menu__price">59€</span></div>
+              <div class="service-menu__item"><span>Tratamiento Facial Hydrafacial</span><span class="service-menu__price">65€</span></div>
+              <div class="service-menu__item"><span>Peeling Casmara</span><span class="service-menu__price">69€</span></div>
+              <div class="service-menu__item"><span>Peeling Químico + Sesión de Vitaminas</span><span class="service-menu__price">69€</span></div>
+              <div class="service-menu__item"><span>Carbón Peel Peeling Facial</span><span class="service-menu__price">79€</span></div>
+              <div class="service-menu__item"><span>Peeling Facial</span><span class="service-menu__price">79€</span></div>
+              <div class="service-menu__item"><span>Tratamiento Facial Dermapen</span><span class="service-menu__price">79€</span></div>
+              <div class="service-menu__item"><span>Rejuvenecimiento Facial Neo Age-Laser</span><span class="service-menu__price">85€</span></div>
+            </div>
+          </div>
+          <div class="service-modal__media">
+            <video src="/videos/faciales.mp4" poster="/img/treatment-1.jpg" autoplay loop muted playsinline class="service-modal__video"></video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-semi" class="service-modal" role="dialog" aria-modal="true">
+      <div class="service-modal__backdrop" data-modal-close></div>
+      <div class="service-modal__container">
+        <button class="service-modal__close" aria-label="Cerrar modal" data-modal-close>&times;</button>
+        <div class="service-modal__content">
+          <div class="service-modal__text">
+            <h2 class="service-modal__title">Semi Permanentes</h2>
+            <div class="service-menu">
+              <div class="service-menu__item"><span>Micropigmentación Labios</span><span class="service-menu__price">50€</span></div>
+              <div class="service-menu__item"><span>Retoque de Micropigmentación</span><span class="service-menu__price">50€</span></div>
+              <div class="service-menu__item"><span>Retoque Microblading</span><span class="service-menu__price">50€</span></div>
+              <div class="service-menu__item"><span>Retoque Micropigmentación Labios Acuarela</span><span class="service-menu__price">50€</span></div>
+              <div class="service-menu__item"><span>Eliminación de Micropigmentación</span><span class="service-menu__price">79€</span></div>
+              <div class="service-menu__item"><span>Retoque anual de maquillaje semipermanente de cejas</span><span class="service-menu__price">200€</span></div>
+              <div class="service-menu__item"><span>Acuarela Lips</span><span class="service-menu__price">250€</span></div>
+              <div class="service-menu__item"><span>Microblading</span><span class="service-menu__price">250€</span></div>
+              <div class="service-menu__item"><span>Micropigmentación Eyeliner Superior</span><span class="service-menu__price">250€</span></div>
+              <div class="service-menu__item"><span>Shading Cejas</span><span class="service-menu__price">250€</span></div>
+              <div class="service-menu__item"><span>Microshading</span><span class="service-menu__price">290€</span></div>
+            </div>
+          </div>
+          <div class="service-modal__media">
+            <video src="/videos/semi.mp4" poster="/img/treatment-2.jpg" autoplay loop muted playsinline class="service-modal__video"></video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal-depilaciones" class="service-modal" role="dialog" aria-modal="true">
+      <div class="service-modal__backdrop" data-modal-close></div>
+      <div class="service-modal__container">
+        <button class="service-modal__close" aria-label="Cerrar modal" data-modal-close>&times;</button>
+        <div class="service-modal__content">
+          <div class="service-modal__text">
+            <h2 class="service-modal__title">Depilaciones, Cejas y Pestañas</h2>
+            <div class="service-menu service-menu--2cols">
+              <div class="service-menu__col">
+                <div class="service-menu__item"><span>Depilación Espalda Hombre</span><span class="service-menu__price">25€</span></div>
+                <div class="service-menu__item"><span>Depilación Ingles</span><span class="service-menu__price">30€</span></div>
+                <div class="service-menu__item"><span>Depilación Cera Ingles Brasileñas</span><span class="service-menu__price">30€</span></div>
+                <div class="service-menu__item"><span>Depilación Cera Piernas Enteras</span><span class="service-menu__price">30€</span></div>
+                <div class="service-menu__item"><span>Depilación con Hilo Facial</span><span class="service-menu__price">35€</span></div>
+                <div class="service-menu__item"><span>Láser</span><span class="service-menu__price">69€</span></div>
+                <div class="service-menu__item"><span>Diseño y Tinte de Cejas</span><span class="service-menu__price">25€</span></div>
+                <div class="service-menu__item"><span>Color Cejas Henna</span><span class="service-menu__price">25€</span></div>
+                <div class="service-menu__item"><span>Maquillaje</span><span class="service-menu__price">39€</span></div>
+                <div class="service-menu__item"><span>Laminación de Cejas</span><span class="service-menu__price">45€</span></div>
+                <div class="service-menu__item"><span>Lifting de Pestañas</span><span class="service-menu__price">49€</span></div>
+                <div class="service-menu__item"><span>Retoque de Cejas</span><span class="service-menu__price">50€</span></div>
+              </div>
+              <div class="service-menu__col">
+                <div class="service-menu__item"><span>Depilación con Hilo Frente</span><span class="service-menu__price">5€</span></div>
+                <div class="service-menu__item"><span>Depilación con Hilo Barbilla</span><span class="service-menu__price">6€</span></div>
+                <div class="service-menu__item"><span>Depilación con Hilo Labio Superior</span><span class="service-menu__price">7€</span></div>
+                <div class="service-menu__item"><span>Depilación con Hilo Patillas</span><span class="service-menu__price">8€</span></div>
+                <div class="service-menu__item"><span>Depilación con Hilo Cejas</span><span class="service-menu__price">12€</span></div>
+                <div class="service-menu__item"><span>Depilación Cera Axilas</span><span class="service-menu__price">12€</span></div>
+                <div class="service-menu__item"><span>Depilación con Hilo Cuello</span><span class="service-menu__price">15€</span></div>
+                <div class="service-menu__item"><span>Depilación Cera Medios Brazos</span><span class="service-menu__price">15€</span></div>
+                <div class="service-menu__item"><span>Depilación Cera Medias Piernas</span><span class="service-menu__price">19€</span></div>
+                <div class="service-menu__item"><span>Depilación Cera Brazos</span><span class="service-menu__price">20€</span></div>
+                <div class="service-menu__item"><span>Depilación Cera Pecho</span><span class="service-menu__price">22€</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="service-modal__media">
+            <video src="/videos/depilaciones.mp4" poster="/img/treatment-3.jpg" autoplay loop muted playsinline class="service-modal__video"></video>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ═══════════ TRAINING ═══════════ -->
     <section id="training" class="training" aria-labelledby="training-title">
